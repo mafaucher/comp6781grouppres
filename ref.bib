@@ -1,0 +1,336 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMMENTED BIBLIOGRAPHY FOR INFORMATION RETRIEVAL PROJECT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCE TEXTBOOKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@book{Allen:1995:NLU:199291,
+	author = {Allen, James},
+	title = {Natural language understanding (2nd ed.)},
+	year = {1995},
+	isbn = {0-8053-0334-0},
+	publisher = {Benjamin-Cummings Publishing Co., Inc.},
+	address = {Redwood City, CA, USA},
+}
+
+@book{Manning:2008:IIR:1394399,
+	author = {Manning, Christopher D. and Raghavan, Prabhakar and Sch\"{u}tze, Hinrich},
+	title = {Introduction to Information Retrieval},
+	year = {2008},
+	isbn = {0521865719, 9780521865715},
+	publisher = {Cambridge University Press},
+	address = {New York, NY, USA},
+} 
+An introductional Textbook for Information Retrieval
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESEARCH TOPICS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+DTD (TOPIC DETECTION & TRACKING)
+This is research for COMP 6781 presentation, but remains of interest.
+
+@mastersthesis{library7291,
+	month = {April},
+	title = {Modeling the Evolving Structure of Social Text for Information Extraction
+		and Topic Detection},
+	school = {Concordia University},
+	author = {Julien Dubuc},
+	year = {2011},
+	url = {http://spectrum.library.concordia.ca/7291/},
+	abstract = {The advent of ?social media? has enabled millions of people to participate in discussions within communities on a global scale. These conversations take place in a myriad of venues, on or off the web, each with its particular approach to implement what we now call ?social media? ? blogs, bulletin boards, mailing lists. However, while the software powering these communities varies a great deal, and continues to evolve, all of them share a common set of features. When a user initiates a discussion, the message is not addressed to a specific person, but broadcast to any interested reader; such a message can generate replies from other users, and these replies can then generate their own, forming a network of connections between messages. There is a need for a system that can make connections between related pieces of social text, to group information into coherent units. Making use of the structure of the social text helps to determine which elements of the text to consider for a given topic. To do this, a system needs to consider the different contexts in which it can be understood. A post, text transmitted by a single author at the same point in time, may have a different topic than the whole thread, which is comprised of all the posts in the discussion following an initial post. Different passages in a post could also have separate topics. Therefore, it is useful to annotate the text with information about its social structure explicitly for use in automatic search and text mining.}
+}
+
+@book{Allan:2002:TDT:772260,
+	editor = {Allan, James},
+	title = {Topic detection and tracking: event-based information organization},
+	year = {2002},
+	isbn = {0-7923-7664-1},
+	publisher = {Kluwer Academic Publishers},
+	address = {Norwell, MA, USA},
+}
+"Topic Detection and Tracking (TDT) is a body of research and an evaluation
+paradigm that addresses event-based organization of broadcast news."
+"TDT research begins with a constantly arriving stream of text from newswire
+and from automatic speech-to-text systems [...]. Roughly speaking, the goal of
+TDT is to break the text down into individual news stories, to monitor the
+stories for events that have not been seen before, and to gather the stories
+into groups that each discuss a single news topic."
+"Within TDT, a topic is defined to be a set of news stories that are strongly
+related by some seminal real-world event. [...] An intuitive definition of a
+topic comes out of how people think about news reporting."
+"[...] although it is similar in spirit to information filtering and retrieval
+work done in the past, it is more tightly defined than broad notions of
+"aboutness" and as a result admits the possibility of applying deeper automated
+analysis of content to solve the problem. That is, it is interesting partly
+because there is hope that some language technologies will be fruitful in this
+domain even though they are not helpful for information retrieval in general."
+Defines folllowing tasks:
+- Story Segmentation (dividing transcript into individual stories)
+- First Story Detection (recognizing the onset of a new topic in the stream)
+- Cluster Detection (grouping stories as they arrive based on the topics)
+- Tracking (monitoring the stream to find additional stories on a topic.)
+- Story Link Detection (deciding whether two random stories discuss the same topic)
+
+* Remaining list from "Topic Detection and Tracking (TDT)" on wikipedia:
+http://en.wikipedia.org/wiki/Temporal_information_retrieval#Topic_Detection_and_Tracking_.28TDT.29
+
+@INPROCEEDINGS{Allan98topicdetection,
+	author = {James Allan and Jaime Carbonell and George Doddington and Jonathan Yamron and Yiming Yang and James Allan Umass and Brian Archibald Cmu and Doug Beeferman Cmu and Adam Berger Cmu and Ralf Brown Cmu and Ira Carp Dragon and George Doddington Darpa and Alex Hauptmann Cmu and John Lafferty Cmu and Victor Lavrenko Umass and Xin Liu Cmu and Steve Lowe Dragon and Paul Van Mulbregt Dragon and Ron Papka Umass and Thomas Pierce Cmu and Jay Ponte Umass and Mike Scudder Umass},
+	title = {Topic Detection and Tracking Pilot Study Final Report},
+	booktitle = {In Proceedings of the DARPA Broadcast News Transcription and Understanding Workshop},
+	year = {1998},
+	pages = {194--218}
+}
+Explains the task in detail: subtasks, corpus, evaluation for each task, and
+cross evaluation of 3 different systems (CMU, UMass, Dragon).
+
+@inproceedings{Swan:1999:EST:319950.319956,
+	author = {Swan, Russell and Allan, James},
+	title = {Extracting significant time varying features from text},
+	booktitle = {Proceedings of the eighth international conference on Information and knowledge management},
+	series = {CIKM '99},
+	year = {1999},
+	isbn = {1-58113-146-1},
+	location = {Kansas City, Missouri, USA},
+	pages = {38--45},
+	numpages = {8},
+	url = {http://doi.acm.org/10.1145/319950.319956},
+	doi = {10.1145/319950.319956},
+	acmid = {319956},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+} 
+Uses a very simple statistical model, using named entities and noun phrases as
+features and chi squared test to determine their statistical significance.
+Feature time spans is defined by a span of days for which features are found
+to be statistically significant. Important stories are generated by finding
+features with overlapping time spans and merging features which are
+statistically dependent in terms of document occurence.
+Several issues are brought up:
+- Stories with long time spans are split up if the topic drops for a single day;
+- If the focus of a story drifts, the system will tend to split the story;
+- NPs are often uninformative and spurious features, suggests to look into using
+  subsumption hierarchies.
+Evaluation shows poor results but this work is preliminary.
+(Also see Swan_timemines:constructing and Swan:2000:AGO:345508.345546)
+
+@MISC{Swan_timemines:constructing,
+	author = {Russell Swan and David Jensen},
+	title = {TimeMines: Constructing Timelines with Statistical Models of Word Usage},
+	year = {}
+}
+Visualization timeline using Swan method.
+(Also see Swan:1999:EST:319950.319956 and Swan:2000:AGO:345508.345546)
+
+@inproceedings{Swan:2000:AGO:345508.345546,
+	author = {Swan, Russell and Allan, James},
+	title = {Automatic generation of overview timelines},
+	booktitle = {Proceedings of the 23rd annual international ACM SIGIR conference on Research and development in information retrieval},
+	series = {SIGIR '00},
+	year = {2000},
+	isbn = {1-58113-226-3},
+	location = {Athens, Greece},
+	pages = {49--56},
+	numpages = {8},
+	url = {http://doi.acm.org/10.1145/345508.345546},
+	doi = {10.1145/345508.345546},
+	acmid = {345546},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+	keywords = {UIs\&slash;visualization for collection overviews, event detection and tracking, statistical\&slash;probabilistic models, text data mining},
+}
+Continuation of the work done by Swan. Unknown if results were improved.
+(Also see Swan:1999:EST:319950.319956 and Swan_timemines:constructing)
+
+@incollection{
+	year={2003},
+	isbn={978-3-540-40726-3},
+	booktitle={Research and Advanced Technology for Digital Libraries},
+	volume={2769},
+	series={Lecture Notes in Computer Science},
+	editor={Koch, Traugott and Sølvberg, IngeborgTorvik},
+	doi={10.1007/978-3-540-45175-4_36},
+	title={Utilizing Temporal Information in Topic Detection and Tracking},
+	url={http://dx.doi.org/10.1007/978-3-540-45175-4_36},
+	publisher={Springer Berlin Heidelberg},
+	author={Makkonen, Juha and Ahonen-Myka, Helena},
+	pages={393-404}
+}
+Final state automaton for representing event time, based on the work of
+Allen (interval algebra) and Reichenbach (speech/reference/event times)
+(Also see Allen:1995:NLU:199291 p. 410)
+
+@INPROCEEDINGS{Shaparenko95identifyingtemporal,
+	author = {Benyah Shaparenko and Rich Caruana and Johannes Gehrke and Thorsten Joachims},
+	title = {Identifying Temporal Patterns and Key Players in Document Collections},
+	booktitle = {Proceeedings, AMAST 95},
+	year = {1995},
+	pages = {165--174},
+	publisher = {Springer}
+}
+
+
+@inproceedings{Mori:2006:TDT:1248823.1249137,
+	author = {Mori, Masaki and Miura, Takao and Shioya, Isamu},
+	title = {Topic Detection and Tracking for News Web Pages},
+	booktitle = {Proceedings of the 2006 IEEE/WIC/ACM International Conference on Web Intelligence},
+	series = {WI '06},
+	year = {2006},
+	isbn = {0-7695-2747-7},
+	pages = {338--342},
+	numpages = {5},
+	url = {http://dx.doi.org/10.1109/WI.2006.171},
+	doi = {10.1109/WI.2006.171},
+	acmid = {1249137},
+	publisher = {IEEE Computer Society},
+	address = {Washington, DC, USA},
+	keywords = {Web Mining, TDT, Web Abstraction},
+} 
+
+@article{Kim:2004:UTI:1039621.1039624,
+	author = {Kim, Pyung and Myaeng, Sung Hyon},
+	title = {Usefulness of temporal information automatically extracted from news articles for topic tracking},
+	issue_date = {December 2004},
+	volume = {3},
+	number = {4},
+	month = dec,
+	year = {2004},
+	issn = {1530-0226},
+	pages = {227--242},
+	numpages = {16},
+	url = {http://doi.acm.org/10.1145/1039621.1039624},
+	doi = {10.1145/1039621.1039624},
+	acmid = {1039624},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+	keywords = {event detection and tracking, temporal information extraction},
+} 
+
+IR SYSTEMS
+
+* SIREn (Semantic Information Retrieval Engine)
+See also: http://siren.sindice.com
+
+@article{Delbru201233,
+	title = "Searching web data: An entity retrieval and high-performance indexing model ",
+	journal = "Web Semantics: Science, Services and Agents on the World Wide Web ",
+	volume = "10",
+	number = "0",
+	pages = "33 - 58",
+	year = "2012",
+	note = "<ce:title>Web-Scale Semantic Information Processing</ce:title> ",
+	issn = "1570-8268",
+	doi = "10.1016/j.websem.2011.04.004",
+	url = "http://www.sciencedirect.com/science/article/pii/S1570826811000230",
+	author = "Renaud Delbru and Stephane Campinas and Giovanni Tummarello",
+	keywords = "Sindice",
+	keywords = "Entity search and retrieval",
+	keywords = "Compression",
+	keywords = "Semantic Web",
+	keywords = "Semi-structured data",
+	keywords = "Inverted index"
+}
+Authors of SIREn. Survey on retrieval of structured documents.
+[9,10] -> IR for XML, keyword search + structure constraints. E.g. XPath queries.
+[12,13,14] -> graph index scheme [15,16,17] -> sequence index scheme
+
+INDEXING SEMI-STRUCTURED DOCUMENTS
+
+@article{Baeza-Yates:1996:ICS:381854.381890,
+	author = {Baeza-Yates, Ricardo and Navarro, Gonzalo},
+	title = {Integrating contents and structure in text retrieval},
+	journal = {SIGMOD Rec.},
+	issue_date = {March 1996},
+	volume = {25},
+	number = {1},
+	month = mar,
+	year = {1996},
+	issn = {0163-5808},
+	pages = {67--79},
+	numpages = {13},
+	url = {http://doi.acm.org/10.1145/381854.381890},
+	doi = {10.1145/381854.381890},
+	acmid = {381890},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+} 
+Interesting discussion of how to design a hybrid model 
+
+@inproceedings{Shah:2002:IRS:584792.584868,
+	author = {Shah, Urvi and Finin, Tim and Joshi, Anupam and Cost, R. Scott and Matfield, James},
+	title = {Information retrieval on the semantic web},
+	booktitle = {Proceedings of the eleventh international conference on Information and knowledge management},
+	series = {CIKM '02},
+	year = {2002},
+	isbn = {1-58113-492-4},
+	location = {McLean, Virginia, USA},
+	pages = {461--468},
+	numpages = {8},
+	url = {http://doi.acm.org/10.1145/584792.584868},
+	doi = {10.1145/584792.584868},
+	acmid = {584868},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+	keywords = {hybrid information retrieval, query-answering systems, semantic web, text extraction},
+} 
+Motivation: Indexing semantic markup would leveradge existing markup to allow
+hybrid of IR and QA system.
+Contribution: Implementation of OWLIR (Ontology Web Language and Information
+Retrieval). Uses markup text as indexing terms, so contributes very little
+inovation to BOW model.
+
+USING POSITION OF QUERY TERMS IN I.R.
+
+For existing systems using multiple indexes for phrase-based search
+Search patents.google.com: inassignee:"Google Inc." information retrieval
+"Multiple index based information retrieval system"
+"Phrase-based indexing in an infromation retrieval system"
+
+@inproceedings{Tao:2007:EPM:1277741.1277794,
+	author = {Tao, Tao and Zhai, ChengXiang},
+	title = {An exploration of proximity measures in information retrieval},
+	booktitle = {Proceedings of the 30th annual international ACM SIGIR conference on Research and development in information retrieval},
+	series = {SIGIR '07},
+	year = {2007},
+	isbn = {978-1-59593-597-7},
+	location = {Amsterdam, The Netherlands},
+	pages = {295--302},
+	numpages = {8},
+	url = {http://doi.acm.org/10.1145/1277741.1277794},
+	doi = {10.1145/1277741.1277794},
+	acmid = {1277794},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+	keywords = {distance measures, proximity, retrieval heuristics},
+} 
+Evaluates 5 proximity measures.
+E.g. d=t1,t2,t1,t3,t5,t4,t2,t3,t4 and q={t1,t4,t5}
+LOCAL MEASURES:
+- Minimum coverage: Minimum span of text in a document covering all query terms at least once.
+  E.g. MinCover=4. Normalized by the number of unique query terms. Positively correlated with
+  relevance.
+- Span: Length of the shortest segment that covers all query term occurrences in a document
+  including repetition. E.g. Span=9. Normalized with total number of occurences of query terms
+  in the span. Negatively correlated with relevance.
+GLOBAL MEASURES:
+- Pairwise distance (minimum, average, maximum): Aggregate of pair-wise distances between terms.
+  {Min,Avg,Max}Dist: {minimal, average, maximum} distance between two terms occuring in both
+  the query and the document. E.g. MinDist=1; AvgDist=(1+2+3)/3=1; MaxDist=9
+  MaxDist negatively correlates, but MinDist and AvgDist positively correlate.
+MinDist has the greatest correlation of the 5.
+Distance is calculated using a positional index (Details for MinDist at p.297) at most linearly
+proportionaly to the number of matched tokens.
+Incorporates proximity distance in retrieval model (interesting method of defining constraints)
+Prior work: evaluation of heuristics in IR
+
+@misc{ wiki:###,
+	author = "Wikipedia",
+	title = "Proximity search (text) --- {W}ikipedia{,} The Free Encyclopedia",
+	year = "2013",
+	url = "http://en.wikipedia.org/w/index.php?title=Proximity_search&oldid=517432402",
+	note = "[Online; accessed 2-May-2013]"
+}
