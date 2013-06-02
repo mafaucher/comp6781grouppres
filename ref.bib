@@ -210,127 +210,20 @@ Allen (interval algebra) and Reichenbach (speech/reference/event times)
 	keywords = {event detection and tracking, temporal information extraction},
 } 
 
-IR SYSTEMS
-
-* SIREn (Semantic Information Retrieval Engine)
-See also: http://siren.sindice.com
-
-@article{Delbru201233,
-	title = "Searching web data: An entity retrieval and high-performance indexing model ",
-	journal = "Web Semantics: Science, Services and Agents on the World Wide Web ",
-	volume = "10",
-	number = "0",
-	pages = "33 - 58",
-	year = "2012",
-	note = "<ce:title>Web-Scale Semantic Information Processing</ce:title> ",
-	issn = "1570-8268",
-	doi = "10.1016/j.websem.2011.04.004",
-	url = "http://www.sciencedirect.com/science/article/pii/S1570826811000230",
-	author = "Renaud Delbru and Stephane Campinas and Giovanni Tummarello",
-	keywords = "Sindice",
-	keywords = "Entity search and retrieval",
-	keywords = "Compression",
-	keywords = "Semantic Web",
-	keywords = "Semi-structured data",
-	keywords = "Inverted index"
-}
-Authors of SIREn. Survey on retrieval of structured documents.
-[9,10] -> IR for XML, keyword search + structure constraints. E.g. XPath queries.
-[12,13,14] -> graph index scheme [15,16,17] -> sequence index scheme
-
-INDEXING SEMI-STRUCTURED DOCUMENTS
-
-@article{Baeza-Yates:1996:ICS:381854.381890,
-	author = {Baeza-Yates, Ricardo and Navarro, Gonzalo},
-	title = {Integrating contents and structure in text retrieval},
-	journal = {SIGMOD Rec.},
-	issue_date = {March 1996},
-	volume = {25},
-	number = {1},
-	month = mar,
-	year = {1996},
-	issn = {0163-5808},
-	pages = {67--79},
-	numpages = {13},
-	url = {http://doi.acm.org/10.1145/381854.381890},
-	doi = {10.1145/381854.381890},
-	acmid = {381890},
-	publisher = {ACM},
-	address = {New York, NY, USA},
+@inproceedings{Lin:2011:STA:2020408.2020476,
+ author = {Lin, Jimmy and Snow, Rion and Morgan, William},
+ title = {Smoothing techniques for adaptive online language models: topic tracking in tweet streams},
+ booktitle = {Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining},
+ series = {KDD '11},
+ year = {2011},
+ isbn = {978-1-4503-0813-7},
+ location = {San Diego, California, USA},
+ pages = {422--429},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/2020408.2020476},
+ doi = {10.1145/2020408.2020476},
+ acmid = {2020476},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {stream processing, tdt, twitter},
 } 
-Interesting discussion of how to design a hybrid model 
-
-@inproceedings{Shah:2002:IRS:584792.584868,
-	author = {Shah, Urvi and Finin, Tim and Joshi, Anupam and Cost, R. Scott and Matfield, James},
-	title = {Information retrieval on the semantic web},
-	booktitle = {Proceedings of the eleventh international conference on Information and knowledge management},
-	series = {CIKM '02},
-	year = {2002},
-	isbn = {1-58113-492-4},
-	location = {McLean, Virginia, USA},
-	pages = {461--468},
-	numpages = {8},
-	url = {http://doi.acm.org/10.1145/584792.584868},
-	doi = {10.1145/584792.584868},
-	acmid = {584868},
-	publisher = {ACM},
-	address = {New York, NY, USA},
-	keywords = {hybrid information retrieval, query-answering systems, semantic web, text extraction},
-} 
-Motivation: Indexing semantic markup would leveradge existing markup to allow
-hybrid of IR and QA system.
-Contribution: Implementation of OWLIR (Ontology Web Language and Information
-Retrieval). Uses markup text as indexing terms, so contributes very little
-inovation to BOW model.
-
-USING POSITION OF QUERY TERMS IN I.R.
-
-For existing systems using multiple indexes for phrase-based search
-Search patents.google.com: inassignee:"Google Inc." information retrieval
-"Multiple index based information retrieval system"
-"Phrase-based indexing in an infromation retrieval system"
-
-@inproceedings{Tao:2007:EPM:1277741.1277794,
-	author = {Tao, Tao and Zhai, ChengXiang},
-	title = {An exploration of proximity measures in information retrieval},
-	booktitle = {Proceedings of the 30th annual international ACM SIGIR conference on Research and development in information retrieval},
-	series = {SIGIR '07},
-	year = {2007},
-	isbn = {978-1-59593-597-7},
-	location = {Amsterdam, The Netherlands},
-	pages = {295--302},
-	numpages = {8},
-	url = {http://doi.acm.org/10.1145/1277741.1277794},
-	doi = {10.1145/1277741.1277794},
-	acmid = {1277794},
-	publisher = {ACM},
-	address = {New York, NY, USA},
-	keywords = {distance measures, proximity, retrieval heuristics},
-} 
-Evaluates 5 proximity measures.
-E.g. d=t1,t2,t1,t3,t5,t4,t2,t3,t4 and q={t1,t4,t5}
-LOCAL MEASURES:
-- Minimum coverage: Minimum span of text in a document covering all query terms at least once.
-  E.g. MinCover=4. Normalized by the number of unique query terms. Positively correlated with
-  relevance.
-- Span: Length of the shortest segment that covers all query term occurrences in a document
-  including repetition. E.g. Span=9. Normalized with total number of occurences of query terms
-  in the span. Negatively correlated with relevance.
-GLOBAL MEASURES:
-- Pairwise distance (minimum, average, maximum): Aggregate of pair-wise distances between terms.
-  {Min,Avg,Max}Dist: {minimal, average, maximum} distance between two terms occuring in both
-  the query and the document. E.g. MinDist=1; AvgDist=(1+2+3)/3=1; MaxDist=9
-  MaxDist negatively correlates, but MinDist and AvgDist positively correlate.
-MinDist has the greatest correlation of the 5.
-Distance is calculated using a positional index (Details for MinDist at p.297) at most linearly
-proportionaly to the number of matched tokens.
-Incorporates proximity distance in retrieval model (interesting method of defining constraints)
-Prior work: evaluation of heuristics in IR
-
-@misc{ wiki:###,
-	author = "Wikipedia",
-	title = "Proximity search (text) --- {W}ikipedia{,} The Free Encyclopedia",
-	year = "2013",
-	url = "http://en.wikipedia.org/w/index.php?title=Proximity_search&oldid=517432402",
-	note = "[Online; accessed 2-May-2013]"
-}
