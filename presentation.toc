@@ -1,4 +1,4 @@
-\beamer@endinputifotherversion {3.26pt}
+\beamer@endinputifotherversion {3.10pt}
 \beamer@sectionintoc {1}{Introduction}{1}{0}{1}
 \beamer@sectionintoc {2}{Implementation}{4}{0}{2}
 \beamer@subsectionintoc {2}{1}{Examples}{8}{0}{2}
