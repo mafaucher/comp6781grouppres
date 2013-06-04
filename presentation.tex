@@ -7,6 +7,9 @@
 \usepackage[utf8]{inputenc}
 \usetheme{Darmstadt}
 
+\usepackage[authoryear,round]{natbib}
+
+
 \title{Topic Detection and Tracking}
 \author{
 Marc-André Faucher\\
@@ -48,10 +51,12 @@ Jonathan Villemaire-Krajden}
 
 \begin{frame}
 \frametitle{Feature Selection}
+\begin{itemize}
 \item Lexical: Words, Noun Phrases, Named Entities
 \item Syntactic: POS tagging: nouns, verbs, proper names)
 \item Semantic: Temporal language cues (verb tense and temporal NPs)\cite{Makkonen:2003:UTITDT}
 \item Metadata: Timestamps
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -114,8 +119,7 @@ model (probabilistic, cosine similarity, etc.):
 
 \begin{frame}
 \frametitle{References}
-Test\cite{library7291}
-\bibliographystyle{plain}
+\bibliographystyle{unsrtnat}
 \bibliography{ref}
 \end{frame}
 
