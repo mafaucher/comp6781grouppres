@@ -2,7 +2,6 @@
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{hyperref}
-\usepackage[style=verbose,hyperref=false]{biblatex}
 \usepackage{fancyvrb}
 \usepackage[T1]{fontenc} % recommended for languages with accents
 \usepackage[utf8]{inputenc}
@@ -67,16 +66,18 @@ Jonathan Villemaire-Krajden}
 \frametitle{References}
 \bibliographystyle{plain}
 \bibliography{ref}
+\end{frame}
+
 \end{document}
 
 
-\begin{frame}
-\frametitle{EXAMPLE IMAGE}
-Some stuff references the image~\ref{fig:example} which can be found bellow.
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{opencalais}
-\caption{An example.}
-\label{fig:example}
-\end{figure}
-\end{frame}
+%% \begin{frame}
+%% \frametitle{EXAMPLE IMAGE}
+%% Some stuff references the image~\ref{fig:example} which can be found bellow.
+%% \begin{figure}[h]
+%% \centering
+%% \includegraphics[width=\textwidth]{opencalais}
+%% \caption{An example.}
+%% \label{fig:example}
+%% \end{figure}
+%% \end{frame}
