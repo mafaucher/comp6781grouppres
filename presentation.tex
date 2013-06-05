@@ -14,7 +14,8 @@
 \author{
 	Marc-André Faucher\\
 	Jeff How\\
-        Jonathan Villemaire-Krajden}
+	Jonathan Villemaire-Krajden
+}
 \date{June 6, 2013}
 
 \begin{document}
@@ -84,22 +85,22 @@
 \section{Implementation}
 \begin{frame}
 	\frametitle{Feature Selection}
-	\begin{itemize}
-		\item Lexical: Words, Noun Phrases, Named Entities
-		\item Syntactic: POS tagging: nouns, verbs, proper names)
-		\item Semantic: Temporal language cues (verb tense and temporal NPs)\citep{Makkonen:2003:UTITDT}
-		\item Metadata: Timestamps
-	\end{itemize}
+	\begin{description}
+		\item[Lexical] Words, Noun Phrases, Named Entities
+		\item[Syntactic] POS tagging (nouns, verbs, proper names)
+		\item[Semantic] Temporal language cues (verb tense and temporal NPs)\citep{Makkonen:2003:RATDL}
+		\item[Metadata] Timestamps
+	\end{description}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Model Selection}
 	Different project used different models to analyze the content.
-	\begin{itemize}
-		\item Vector space: TF-IDF % TODO: ADD CITATIONS
-		\item Probabilistic: Chi-square % TODO: ADD CITATIONS
-		\item Graph-based: Edge counting % TODO: ADD CITATIONS
-	\end{itemize}
+	\begin{description}
+		\item[Vector space] TF-IDF % TODO: ADD CITATIONS
+		\item[Probabilistic] Chi-square % TODO: ADD CITATIONS
+		\item[Graph-based] Edge counting % TODO: ADD CITATIONS
+	\end{description}
 \end{frame}
 \begin{frame}
 	\frametitle{Cluster}
@@ -122,7 +123,7 @@
 					\item Network of features and relations
 					\item Topics are identified using network theory
 				\end{itemize}
-			\item Advanced Techniques:
+			\item {Advanced Techniques:}
 				\begin{itemize}
 					\item Latent Dirichlet Allocation (LDA)
 					\item Non-negative Matrix Factorization
@@ -144,6 +145,10 @@
 		\item Calculate probabilities of time-span overlap for features if independence is assumed.
 		\item Merge features, which are statistically dependent ($\chi^2$) in terms of doc occurrence.
 	\end{itemize}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{images/timespan.png}
+	\end{figure}
 \end{frame}
 
 \subsection{Examples}
@@ -181,9 +186,12 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{References}
-\bibliographystyle{unsrtnat}
-\bibliography{ref}
+  \frametitle{References}
+  \footnotesize{
+    \bibliographystyle{unsrtnat}
+    \bibliography{ref}
+  }
+
 \end{frame}
 
 \end{document}
