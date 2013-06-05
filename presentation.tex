@@ -11,19 +11,56 @@
 \author{
 	Marc-André Faucher\\
 	Jeff How\\
-Jonathan Villemaire-Krajden}
+        Jonathan Villemaire-Krajden}
 \date{June 6, 2013}
 
 \begin{document}
 
 \begin{frame}[plain]
-	\section{Introduction}
-	\frametitle{Example}
-	\titlepage
+  \titlepage
 \end{frame}
 
-\begin{frame}[plain]
-	\frametitle{Terminology}
+\section{Introduction}
+
+\begin{frame}
+  \frametitle{Topic Detection and Tracking}
+  Wayne (1997) - \textit{automatic techniques for finding topically related materials in streams of data}
+\begin{columns}
+\begin{column}{.28\textwidth}
+  \begin{itemize}
+  \item
+    \href{http://emm.newsexplorer.eu/NewsExplorer/home/en/latest.html}{EMM NewsExplorer}
+  \item
+    \href{http://emm.newsbrief.eu/NewsBrief/clusteredition/en/latest.html}{EMM NewsBrief}
+  \end{itemize}
+\end{column}
+\begin{column}{.68\textwidth}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/emm_0}
+  \end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Terminology}
+  \begin{description}
+  \item[Story] an article or news broadcast with an underlying focus
+  \item[Event] a unique thing that happens at some point in time
+  \item[Topic] a set of highly-related events
+  \ \\
+  \item[Input] a continuous stream of real-time text (stories)
+  \item[Output] clusters organized by topic with a leading story
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Terminology}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/emm_1}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -43,10 +80,6 @@ Jonathan Villemaire-Krajden}
 
 \section{Implementation}
 \begin{frame}
-	\frametitle{References}
-\end{frame}
-
-\begin{frame}
 	\frametitle{Feature Selection}
 	\begin{itemize}
 		\item Lexical: Words, Noun Phrases, Named Entities
@@ -57,9 +90,13 @@ Jonathan Villemaire-Krajden}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model Selection}
+  \frametitle{Model Selection}
+  Different project used different models to analyze the content.
+  \begin{itemize}
+  \item Vector space: TF-IDF % TODO: ADD CITATIONS
+  \item Probabilistic: Chi-square % TODO: ADD CITATIONS
+  \item Graph-based: Edge counting % TODO: ADD CITATIONS
 \end{frame}
-
 \begin{frame}
 	\frametitle{Cluster}
 	Stories are grouped through clustering using distance metrics based on the
