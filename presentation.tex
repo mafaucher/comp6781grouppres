@@ -7,6 +7,9 @@
 \usepackage[utf8]{inputenc}
 \usetheme{Darmstadt}
 
+\usepackage[round,authoryear]{natbib}
+
+
 \title{Topic Detection and Tracking}
 \author{
 	Marc-André Faucher\\
@@ -84,7 +87,7 @@
 	\begin{itemize}
 		\item Lexical: Words, Noun Phrases, Named Entities
 		\item Syntactic: POS tagging: nouns, verbs, proper names)
-		\item Semantic: Temporal language cues (verb tense and temporal NPs)\cite{Makkonen:2003:UTITDT}
+		\item Semantic: Temporal language cues (verb tense and temporal NPs)\citep{Makkonen:2003:UTITDT}
 		\item Metadata: Timestamps
 	\end{itemize}
 \end{frame}
@@ -134,7 +137,7 @@
 
 \subsection{Examples}
 \begin{frame}
-	\frametitle{Time-Span \cite{Swan:1999:EST:319950.319956}}
+	\frametitle{Time-Span \citep{Swan:1999:EST:319950.319956}}
 	% TODO: (note to self: this section needs work)
 	\begin{itemize}
 		\item Entities \& noun phrases with overlapping time-spans constitutes a topic.
@@ -145,7 +148,7 @@
 
 \subsection{Examples}
 \begin{frame}
-	\frametitle{Topic Tracking in Tweet Streams \cite{Lin:2011:STA:2020408.2020476}}
+	\frametitle{Topic Tracking in Tweet Streams \citep{Lin:2011:STA:2020408.2020476}}
 	\begin{itemize}
 		\item High arrival rate (up to 4000+ tweets per second)
 		\item Foreground model: tracks recent topic counts
@@ -178,10 +181,9 @@
 \end{frame}
 
 \begin{frame}
-	% TODO: Fix citation, alse reference style may be too large
-	\frametitle{References}
-	\bibliographystyle{plain}
-	\bibliography{ref}
+\frametitle{References}
+\bibliographystyle{unsrtnat}
+\bibliography{ref}
 \end{frame}
 
 \end{document}
