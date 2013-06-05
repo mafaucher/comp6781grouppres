@@ -95,17 +95,21 @@
 
 \begin{frame}
 	\frametitle{Similarity Measures and Model Selection}
+        \small
 	Similarity measures such as TF-IDF and language models such as smoothed Bayes are used to compare documents. 
+        \footnotesize{
 	\begin{description}
 		\item[Vector space] TF-IDF \citep{carbonell1999cmu}
-		\item[Probabilistic] Chi-square\citep{Swan:1999:EST:319950.319956}, Naive Bayes
-		\item[Graph-based] Draw edges in a graph for cooccurrences of a word. \citep{saha2012learning}
-                \item[Language Models] Provide the probability of a story given a topic. \citep{allan2000detections}
+		\item[Probabilistic] Chi-square\citep{Swan:1999:EST:319950.319956}
+		\item[Graph-based] Edge weights from word cooccurrences \tiny\citep{saha2012learning}
+                  \footnotesize
+                \item[Language Models] Probability of a story given a topic \citep{allan2000detections}
 	\end{description}
+        }\vspace{-1em}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.6\textwidth]{images/keygraph}
-\caption{source: \url{http://www.cs.umd.edu/~sayyadi/keygraph.html}}
+\includegraphics[width=0.5\textwidth]{images/keygraph}
+\scriptsize{\caption{source: \url{http://www.cs.umd.edu/~sayyadi/keygraph.html}}}
 \end{figure}
 \end{frame}
 
@@ -130,7 +134,7 @@
 					\item Network of features and relations
 					\item Topics are identified using network theory
 				\end{itemize}
-			\item {Advanced Techniques:}
+			\item {\bf Advanced Techniques:}
 				\begin{itemize}
 					\item Latent Dirichlet Allocation (LDA)
 					\item Non-negative Matrix Factorization (NMF) \citep{sayyadi2009event}
@@ -148,13 +152,13 @@
 	\frametitle{Time-Span \citep{Swan:1999:EST:319950.319956}}
 	% TODO: (note to self: this section needs work)
 	\begin{itemize}
-		\item Entities \& noun phrases with overlapping time-spans constitutes a topic.
+		\item Entities \& noun phrases with overlapping time-spans constitute a topic.
 		\item Calculate probabilities of time-span overlap for features if independence is assumed.
 		\item Merge features, which are statistically dependent ($\chi^2$) in terms of doc occurrence.
 	\end{itemize}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\textwidth]{images/timespan.png}
+		\includegraphics[width=0.65\textwidth]{images/timespan.png}
 	\end{figure}
 \end{frame}
 
@@ -176,7 +180,7 @@
 	\end{itemize}
 \begin{figure}[hb]
 \centering
-\includegraphics[width=0.5\textwidth]{images/twitter}
+\includegraphics[width=0.65\textwidth]{images/twitter}
 \end{figure}
 \end{frame}
 
@@ -187,7 +191,7 @@
 	\begin{itemize}
 		\item Topic Detection
 		\item Topic Tracking
-		\item Implementation: Feature -> Model -> Cluster
+		\item Implementation: Feature $\rightarrow$ Model $\rightarrow$ Cluster
 		\item Current Application:
 			\begin{itemize}
 				\item EMM
@@ -198,8 +202,8 @@
 
 \begin{frame}
   \frametitle{References}
-  \footnotesize{
-    \bibliographystyle{unsrtnat}
+  \scriptsize{
+    \bibliographystyle{abbrvnat}
     \bibliography{ref}
   }
 
