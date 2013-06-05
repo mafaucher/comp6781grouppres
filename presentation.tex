@@ -9,114 +9,141 @@
 
 \title{Topic Detection and Tracking}
 \author{
-Marc-André Faucher\\
-Jeff How\\
+	Marc-André Faucher\\
+	Jeff How\\
 Jonathan Villemaire-Krajden}
 \date{June 6, 2013}
 
 \begin{document}
 
 \begin{frame}[plain]
-\section{Introduction}
-\frametitle{Example}
-\titlepage
+	\section{Introduction}
+	\frametitle{Example}
+	\titlepage
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Terminology}
+	\frametitle{Terminology}
 \end{frame}
 
 \begin{frame}
-\frametitle{Subtasks}
-\begin{itemize}
-\item Topic Detection
-\begin{itemize}
-\item 1st story
-\end{itemize}
-\item Topic Tracking
-\begin{itemize}
-\item Finding additional stories about a particular topic
-\item Clustering
-\end{itemize}
-\end{itemize}
+	\frametitle{Subtasks}
+	\begin{itemize}
+		\item Topic Detection
+			\begin{itemize}
+				\item 1st story
+			\end{itemize}
+		\item Topic Tracking
+			\begin{itemize}
+				\item Finding additional stories about a particular topic
+				\item Clustering
+			\end{itemize}
+	\end{itemize}
 \end{frame}
 
 \section{Implementation}
 \begin{frame}
-\frametitle{References}
+	\frametitle{References}
 \end{frame}
 
 \begin{frame}
-\frametitle{Feature Selection}
-\item Lexical: Words, Noun Phrases, Named Entities
-\item Syntactic: POS tagging: nouns, verbs, proper names)
-\item Semantic: Temporal language cues (verb tense and temporal NPs)\cite{Makkonen:2003:UTITDT}
-\item Metadata: Timestamps
+	\frametitle{Feature Selection}
+	\begin{itemize}
+		\item Lexical: Words, Noun Phrases, Named Entities
+		\item Syntactic: POS tagging: nouns, verbs, proper names)
+		\item Semantic: Temporal language cues (verb tense and temporal NPs)\cite{Makkonen:2003:UTITDT}
+		\item Metadata: Timestamps
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Model Selection}
+	\frametitle{Model Selection}
 \end{frame}
 
 \begin{frame}
-\frametitle{Cluster}
-Stories are grouped through clustering using distance metrics based on the
-model (probabilistic, cosine similarity, etc.):
-\begin{itemize}
-	\item {\bf K-means:}
+	\frametitle{Cluster}
+	Stories are grouped through clustering using distance metrics based on the
+	model (probabilistic, cosine similarity, etc.):
+	\begin{columns}[c]
+		\column{3in}
 		\begin{itemize}
-			\item Selecting \emph{k}[...] 
-			\item Centroid represents dominant features in the cluster
+			\item {\bf K-means:}
+				\begin{itemize}
+					\item Selecting small \emph{k} with small variance
+					\item Centroid represents dominant features
+				\end{itemize}
+			\item {\bf Hierarchical agglomerative clustering:}
+				\begin{itemize}
+					\item Provides a hierarchy of clusters 
+				\end{itemize}
+			\item {\bf KeyGraph link based clustering:}
+				\begin{itemize}
+					\item Network of features and relations
+					\item Topics are identified using network theory
+				\end{itemize}
+			\item Advanced Techniques:
+				\begin{itemize}
+					\item Latent Dirichlet Allocation (LDA)
+					\item Non-negative Matrix Factorization
+				\end{itemize}
 		\end{itemize}
-	\item {\bf Hierarchical agglomerative clustering:}
-		\begin{itemize}
-			\item[...]
-		\end{itemize}
-	\item {\bf KeyGraph link based clustering:}
-		\begin{itemize}
-			\item[...]
-		\end{itemize}
-	\item {\bf Advanced Techniques:}
-		\begin{itemize}
-			\item Latent Dirichlet Allocation (LDA)
-			\item Non-negative Matrix Factorization
-		\end{itemize}
-\end{itemize}
+		\column{1in}
+			\includegraphics[width=\textwidth]{img/cluster_centroid.png} \\
+			\hfill \\
+			\includegraphics[width=\textwidth]{img/cluster_link.png} \\
+	\end{columns}
 \end{frame}
 
 \subsection{Examples}
 \begin{frame}
-\frametitle{Time-Span}
+	\frametitle{Time-Span \cite{Swan:1999:EST:319950.319956}}
+	% TODO: (note to self: this section needs work)
+	\begin{itemize}
+		\item Entities \& noun phrases with overlapping time-spans constitutes a topic.
+		\item Calculate probabilities of time-span overlap for features if independence is assumed.
+		\item Merge features, which are statistically dependent ($\chi^2$) in terms of doc occurrence.
+	\end{itemize}
 \end{frame}
 
 \subsection{Examples}
 \begin{frame}
-\frametitle{Topic Tracking in Tweet Streams \cite{Lin:2011:STA:2020408.2020476}}
-\begin{itemize}
-\item High arrival rate (up to 4000+ tweets per second)
-\item Foreground model: tracks recent topic counts
-\begin{itemize}
-\item History of \emph{h} events
-\item Smoothed with the background model
-\end{itemize}
-\item Background model: long-term estimates of term distributions
-\begin{itemize}
-\item Handles sparsity from limited history of foreground model
-\end{itemize}
-\item Evaluation based off hashtags
-\end{itemize}
+	\frametitle{Topic Tracking in Tweet Streams \cite{Lin:2011:STA:2020408.2020476}}
+	\begin{itemize}
+		\item High arrival rate (up to 4000+ tweets per second)
+		\item Foreground model: tracks recent topic counts
+			\begin{itemize}
+				\item History of \emph{h} events
+				\item Smoothed with the background model
+			\end{itemize}
+		\item Background model: long-term estimates of term distributions
+			\begin{itemize}
+				\item Handles sparsity from limited history of foreground model
+			\end{itemize}
+		\item Evaluation based off hashtags
+	\end{itemize}
 \end{frame}
 
 \section{Conclusion}
 \begin{frame}
-\frametitle{Conclusion}
+	\frametitle{Conclusion}
+	% TODO: (note to self: this section needs work)
+	\begin{itemize}
+		\item Topic Detection
+		\item Topic Tracking
+		\item Implementation: Feature -> Model -> Cluster
+		\item Current Application:
+			\begin{itemize}
+				\item EMM
+				\item Google News
+			\end{itemize}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{References}
-Test\cite{library7291}
-\bibliographystyle{plain}
-\bibliography{ref}
+	% TODO: Fix citation, alse reference style may be too large
+	\frametitle{References}
+	\bibliographystyle{plain}
+	\bibliography{ref}
 \end{frame}
 
 \end{document}
