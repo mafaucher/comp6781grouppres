@@ -94,14 +94,21 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model Selection}
-	Different project used different models to analyze the content.
+	\frametitle{Similarity Measures and Model Selection}
+	Similarity measures such as TF-IDF and language models such as smoothed Bayes are used to compare documents. 
 	\begin{description}
-		\item[Vector space] TF-IDF % TODO: ADD CITATIONS
-		\item[Probabilistic] Chi-square % TODO: ADD CITATIONS
-		\item[Graph-based] Edge counting % TODO: ADD CITATIONS
+		\item[Vector space] TF-IDF \citep{carbonell1999cmu}
+		\item[Probabilistic] Chi-square\citep{Swan:1999:EST:319950.319956}, Naive Bayes
+		\item[Graph-based] Draw edges in a graph for cooccurrences of a word. \citep{saha2012learning}
+                \item[Language Models] Provide the probability of a story given a topic. \citep{allan2000detections}
 	\end{description}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{images/keygraph}
+\caption{source: \url{http://www.cs.umd.edu/~sayyadi/keygraph.html}}
+\end{figure}
 \end{frame}
+
 \begin{frame}
 	\frametitle{Cluster}
 	Stories are grouped through clustering using distance metrics based on the
@@ -126,7 +133,7 @@
 			\item {Advanced Techniques:}
 				\begin{itemize}
 					\item Latent Dirichlet Allocation (LDA)
-					\item Non-negative Matrix Factorization
+					\item Non-negative Matrix Factorization (NMF) \citep{sayyadi2009event}
 				\end{itemize}
 		\end{itemize}
 		\column{1in}
@@ -199,15 +206,3 @@
 \end{frame}
 
 \end{document}
-
-
-%% \begin{frame}
-%% \frametitle{EXAMPLE IMAGE}
-%% Some stuff references the image~\ref{fig:example} which can be found bellow.
-%% \begin{figure}[h]
-%% \centering
-%% \includegraphics[width=\textwidth]{opencalais}
-%% \caption{An example.}
-%% \label{fig:example}
-%% \end{figure}
-%% \end{frame}
